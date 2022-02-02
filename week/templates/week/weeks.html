@@ -1,0 +1,13 @@
+{% extends 'week/base.html' %}
+{% block content %}
+    <div class="d-flex flex-column align-items-center justify-content-center vh-100">
+        <h1>
+            {% if weeks %}
+                Сейчас Неделя #{{ weeks }}
+            {% else %}
+                Сейчас Неделя #1
+            {% endif %}
+        </h1>
+        <a class="btn btn-secondary btn-lg active" href="{% url 'index' %}" role="button">Перейти к расчетам</a>
+    </div>
+{% endblock content %}

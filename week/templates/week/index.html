@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Hello world!
-</body>
-</html>
+{% extends 'week/base.html' %}
+{% block content %}
+    <div class="d-flex align-items-center justify-content-center vh-100">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+            {{ form }}
+            </div>
+            <button type="submit" class="btn btn-secondary btn-lg">Рассчитать</button>
+        </form>
+
+        {% if weeks %}
+            Сейчас неделя #{{ weeks }}
+        {% endif %}
+    </div>
+{% endblock content %}
